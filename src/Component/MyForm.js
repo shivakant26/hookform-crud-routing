@@ -20,7 +20,11 @@ const MyForm = () => {
     let result = test;
     
     const onSubmit = (data) => {
-        dispatch(Add(data))
+        if(result){
+            dispatch(UpdateData(data,id))
+        }else{
+            dispatch(Add(data))
+        }
         navigate("/table");
     }
     useEffect(()=>{
@@ -30,11 +34,6 @@ const MyForm = () => {
             setValue('lastName',result.lastName)
         }
     },[test])
-
-    const Update = ()=>{
-        dispatch(UpdateData(result,id))
-        navigate("/table");
-    }
     return (
         <div>
             <Container>
@@ -51,7 +50,7 @@ const MyForm = () => {
                                         {...register("firstName",{
                                             required: true,pattern: /^[A-Za-z]+$/i})}
                                         placeholder="firstName"
-                                        // onChange={(e)=>{setState({firstName:e.target.value})}}
+                                     
                                         
                                     />
                                     {errors?.firstName?.type === "required" && <p className="err">FirstName is required</p>}
@@ -63,24 +62,20 @@ const MyForm = () => {
                                         {...register("lastName",{
                                             required: true,pattern: /^[A-Za-z]+$/i})}
                                         placeholder="lastName"
-                                        // onChange={(e)=>{setState({lastName:e.target.value})}}
-                                        // value={test.lastName}
+                                    
                                     />
                                     {errors?.lastName?.type === "required" && <p className="err">LastName is required</p>}
                                     {errors?.lastName?.type === "pattern" && (<p className="err">Alphabetical characters only</p>)}
                                 </div>
 
                                 <div className="form-field">
-                                    {
-                                        result ?
-                                        <Button variant="danger"
-                                        onClick={()=>Update()}
-                                        >Update</Button>
-                                        :
+                                    
                                         <Button className="submit"
-                                        onClick={handleSubmit(onSubmit)}
-                                        >Submit</Button>
-                                    }
+                                        onClick={handleSubmit(onSubmit)}>
+                                            {
+                                                result ? "Update" : "Submit"
+                                            }
+                                        </Button>
                                     
                                 </div>
                             </form>
