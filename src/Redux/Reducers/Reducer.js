@@ -38,10 +38,15 @@ const reducer = (state = initialState , action) =>{
             break;
             case 'UPDATE':
                 var updatelist = state.data;
+                updatelist.splice(action.id,1,{
+                    firstName:action.payload.firstName,
+                    lastName:action.payload.lastName
+                })
+                debugger;
                 return{
                     ...state,
-                    // isEdit:null,
-                    // data:[data]
+                    isEdit:null,
+                    data:[...updatelist]
                 }
                 break;
             default:

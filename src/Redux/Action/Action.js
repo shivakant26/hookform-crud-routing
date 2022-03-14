@@ -11,6 +11,7 @@ export const EditData = (id)=>{
     }
 }
 export const UpdateData = (result,id)=>{
+    debugger
     return{
         type:"UPDATE",
         payload:result,
