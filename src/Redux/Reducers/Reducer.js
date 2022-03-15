@@ -8,7 +8,6 @@ const initialState = {
 }
 
 const reducer = (state = initialState , action) =>{
-    console.log("action",action)
     switch(action.type){
         case 'ADD' :
             let list = state.data;
@@ -42,7 +41,6 @@ const reducer = (state = initialState , action) =>{
                     firstName:action.payload.firstName,
                     lastName:action.payload.lastName
                 })
-                debugger;
                 return{
                     ...state,
                     isEdit:null,

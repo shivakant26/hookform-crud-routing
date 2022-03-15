@@ -26,13 +26,12 @@ const UserTable = () => {
     }
 
     const Edit = (id) =>{
-        // const { id } = match.params;
         dispatch(EditData(id));
         navigate(`/myform/${id}`);
     }
 
     return (
-        <div>
+        <div className="Table">
             <h2>User Table</h2>
             <Container>
                 <Row>

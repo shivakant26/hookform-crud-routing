@@ -5,8 +5,8 @@ const Menu = () =>{
  return(
      <div className="menu">
          <Link to="/">Home</Link>
-         <Link to="/myform">MyForm</Link>
-         <Link to="/table">TableList</Link>
+         <Link to="/login">Login</Link>
+         <Link to="/registration">Registration</Link>
      </div>
  )
 }
