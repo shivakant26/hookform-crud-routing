@@ -7,6 +7,12 @@ import PageNotFound from './Component/PageNotFound';
 import Home from './Component/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserTable from './Component/UserTabel';
+import Footer from './Component/Footer';
+import Banner from './Component/Banner';
+import Logout from './Component/Logout';
+import Login from './Component/Login';
+import Registration from './Component/Registration';
+import Dashboard from './Component/Dashboard';
 
 function App() {
   return (
@@ -15,11 +21,16 @@ function App() {
        <Header />
        <Routes>
          <Route path="/" exact  element={<Home/>}/>
-         <Route path="/myform" exact  element={<MyForm/>}/>
+         <Route path="dashboard/myform" exact  element={<MyForm/>}/>
          <Route path="/myform/:id" exact  element={<MyForm/>}/>
-         <Route path="/table"  element={<UserTable/>}/>
+          <Route path="/table"  element={<UserTable/>}/>
+          <Route path="/logout"  element={<Logout />}/>
+         <Route path="/dashboard/*"  element={<Dashboard />} />
+         <Route path="/login"  element={<Login />}/>
+         <Route path="/registration"  element={<Registration />}/>
          <Route path="*" exact={true}  element={<PageNotFound/>}/>
        </Routes>
+       <Footer />
      </Router>
     </div>
   );
