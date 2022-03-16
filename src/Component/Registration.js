@@ -2,15 +2,24 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RegisterUser } from "../Redux/Action/AdminAction";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const Registration = () =>{
     const { register,handleSubmit,formState: { errors }} = useForm();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const Register = (formdata) =>{
         dispatch(RegisterUser(formdata));
+        toast('Register Successfully',
+        {   
+            className:'success',
+            position: toast.POSITION.TOP_CENTER
+    })
+        navigate("/login");
     }
 
     return(
@@ -30,7 +39,7 @@ const Registration = () =>{
                                             pattern: /^[A-Za-z]+$/i})
                                         }
                                              placeholder="firstname"/>
-                                {errors?.firstName?.type === "required" && <p className="err">FirstName is required</p>}
+                                {errors?.firstName?.type === "required" && <p className="err">FirstName is required*</p>}
                                 {errors?.firstName?.type === "pattern" && (<p className="err">Alphabetical characters only</p>)}             
                             </div>
                             <div className="form-field">
@@ -39,7 +48,7 @@ const Registration = () =>{
                                             pattern: /^[A-Za-z]+$/i})
                                         }
                                          placeholder="lastName"/>
-                                    {errors?.lastName?.type === "required" && <p className="err">LastName is required</p>}
+                                    {errors?.lastName?.type === "required" && <p className="err">LastName is required*</p>}
                                 {errors?.lastName?.type === "pattern" && (<p className="err">Alphabetical characters only</p>)}
                             </div>
                             <div className="form-field">
@@ -49,7 +58,7 @@ const Registration = () =>{
                                         })
                                         }
                                             placeholder="Email"/>
-                                {errors?.Email?.type === "required" && <p className="err">Email is required</p>}
+                                {errors?.Email?.type === "required" && <p className="err">Email is required*</p>}
                                 {errors?.Email?.type === "pattern" && (<p className="err">Enter Valid Email</p>)}
                             </div>
                             <div className="form-field">
@@ -57,7 +66,7 @@ const Registration = () =>{
                                             required: true})
                                             }
                                              placeholder="Password"/>
-                                {errors?.Password?.type === "required" && <p className="err">Password is required</p>}
+                                {errors?.Password?.type === "required" && <p className="err">Password is required*</p>}
                             </div>
                             <div className="form-field">
                             <input {...register("City",{
@@ -65,7 +74,7 @@ const Registration = () =>{
                                             pattern: /^[A-Za-z]+$/i})
                                             }
                                              placeholder="city"/>
-                                {errors?.City?.type === "required" && <p className="err">City is required</p>}
+                                {errors?.City?.type === "required" && <p className="err">City is required*</p>}
                                 {errors?.City?.type === "pattern" && (<p className="err">Alphabetical characters only</p>)}
                             </div>
                             <div className="form-field">

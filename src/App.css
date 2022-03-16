@@ -172,3 +172,9 @@ svg.addusericon,svg.adduserlisticon,svg.adduserlogouticon{
     position: absolute;
     left: 161px;
 }
+.Toastify__toast-theme--light{
+  color: red !important;
+}
+.Toastify__toast-theme--light.success{
+  color:green !important;
+}

@@ -14,6 +14,7 @@ const AdminReducer = (state=initialState,action) =>{
             Record:[...register_list]
         }
         break;
+        
         case'LOGIN_USER':
         var token;
         var errmessage;
