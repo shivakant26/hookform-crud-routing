@@ -4,22 +4,39 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginUser } from "../Redux/Action/AdminAction";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+toast.configure();
+
 
 const Login = () =>{
     const navigate = useNavigate();
     const { register,handleSubmit,formState: { errors }} = useForm();
     const dispatch = useDispatch();
-    const getToken = useSelector((state)=>state.AdminReducer.isLogin)
-    console.log("Token is",getToken)
+    // const getToken = useSelector((state)=>state.AdminReducer.isLogin)
+    // console.log("Token is",getToken)
 
     const Login = (logindata) =>{
         dispatch(LoginUser(logindata))
-        if(getToken){
-            alert("Sucessfull Login")
+
+        if(!localStorage.getItem("test")){
+            toast('Please Register',
+            {position: toast.POSITION.TOP_CENTER
+        })
+        }
+        if(localStorage.getItem("token")){
             navigate("/dashboard")
+            toast('Seccussfully Login',
+            {   
+                className:'success',
+                position: toast.POSITION.TOP_CENTER
+        })
+            
         }else{
-            alert("User Not Availble")
-            navigate("/login")
+            navigate("/login");
+            toast('UserId Or PassWord Incorrect',
+            {position: toast.POSITION.TOP_CENTER
+        })
         }
         
         
