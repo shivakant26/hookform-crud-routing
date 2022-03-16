@@ -166,3 +166,9 @@ margin: 0;
 .sidebar_inner{
 color: #fff;
 }
+svg.addusericon,svg.adduserlisticon,svg.adduserlogouticon{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 161px;
+}

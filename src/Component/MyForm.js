@@ -25,7 +25,7 @@ const MyForm = () => {
         }else{
             dispatch(Add(data))
         }
-        navigate("/table");
+        navigate("/dashboard/table");
     }
     useEffect(()=>{
         console.log(13213213,test);
