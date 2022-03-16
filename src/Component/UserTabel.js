@@ -27,7 +27,7 @@ const UserTable = () => {
 
     const Edit = (id) =>{
         dispatch(EditData(id));
-        navigate(`/myform/${id}`);
+        navigate(`/dashboard/myform/${id}`);
     }
 
     return (
