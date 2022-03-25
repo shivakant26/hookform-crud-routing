@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Banner from "./Banner";
+import Footer from "./Footer";
 
 const Home = () =>{
  return(
@@ -22,6 +23,7 @@ const Home = () =>{
                  <Col></Col>
              </Row>
          </Container>
+         <Footer />
          
      </div>
  )

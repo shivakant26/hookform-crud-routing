@@ -41,7 +41,7 @@ const MyForm = () => {
                     <Col></Col>
                     <Col>
                         <div className="form-heading">
-                            <h2>Add Form</h2>
+                            <h2>Add User</h2>
                         </div>
                         <div className="form-section">
                             <form>
