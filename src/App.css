@@ -91,6 +91,9 @@ input[type="submit"]:hover {
 .footer{
   background-color: #000;
   padding:40px 0px;
+  color: #fff;
+  position: relative;
+  z-index: 22;
 }
 .row-wr{
   padding: 80px 0px;
@@ -178,3 +181,14 @@ svg.addusericon,svg.adduserlisticon,svg.adduserlogouticon{
 .Toastify__toast-theme--light.success{
   color:green !important;
 }
+.btn-circle{
+border-radius: 50% !important;
+}
+.text-muted.fs-2.ms-auto.mt-2.mt-md-0 {
+  font-size: 0.75rem !important;
+}
+
+
+
+
+

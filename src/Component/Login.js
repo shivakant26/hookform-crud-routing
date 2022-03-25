@@ -19,7 +19,7 @@ const Login = () =>{
     const Login = (logindata) =>{
         dispatch(LoginUser(logindata))
 
-        if(!localStorage.getItem("test")){
+        if(localStorage.getItem("test") === ""){
             toast('Please Register',
             {position: toast.POSITION.TOP_CENTER
         })
