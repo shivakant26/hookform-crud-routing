@@ -3,28 +3,12 @@ import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Footer from "./Footer";
-// import MyForm from "./MyForm";
-// import UserTable from "./UserTabel";
-// import Logout from "./Logout";
+
 const Dashboard = () =>{
     const userdetail = useSelector((state)=> state.AdminReducer.Record);
     // let username = userdetail.firstName;
     
-    return(
-        // <div className="container-fluid">
-        //     <div className="row">
-        //         <div className="col-md-4 side_bar">
-        //             <div className="sidebar_inner">
-        //                 <h2>Dashboard</h2>
-        //                 <Sidebar />
-        //             </div>
-        //         </div>
-        //         <div className="col-md-8">
-        //             <Outlet />
-        //         </div>
-        //     </div>
-        // </div>
-    
+    return( 
 <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
           <header className="topbar" data-navbarbg="skin5">
