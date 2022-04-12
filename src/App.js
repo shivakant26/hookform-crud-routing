@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { BrowserRouter as Router, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Component/Header';
 import MyForm from './Component/MyForm';
 import PageNotFound from './Component/PageNotFound';
 import Home from './Component/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserTable from './Component/UserTabel';
-import Footer from './Component/Footer';
-import Logout from './Component/Logout';
+// import Footer from './Component/Footer';
+// import Logout from './Component/Logout';
 import Login from './Component/Login';
 import Registration from './Component/Registration';
 import Dashboard from './Component/Dashboard';
@@ -38,7 +38,7 @@ function App() {
             </>
          
          :<>
-           <Route  path="/" exact  element={<Home/>} />
+           <Route  path="" exact  element={<Home/>} />
            <Route  path="login" exact element={<Login />}/>
            <Route  path="registration" exact  element={<Registration />}/>
            <Route path="*" exact={true}  element={<PageNotFound/>}/>
